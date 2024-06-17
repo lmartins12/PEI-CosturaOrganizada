@@ -82,7 +82,7 @@ Costura Organizada é um sistema ERP desenvolvido para gerenciar um ateliê de c
 
 ### Frontend
 
-1. Navegue até o diretório do frontend: `cd frontend`
+1. Navegue até o diretório do frontend: `cd Frontend_CosturaOrganizada`
 2. Instale as dependências: `npm install`
 3. Execute a aplicação: `ng serve`
 
