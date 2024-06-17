@@ -1,0 +1,17 @@
+<div class="calendar-container">
+  <div class="calendar-header">
+    <button (click)="previousMonth()">&lt;</button>
+    <span>{{ month }} {{ year }}</span>
+    <button (click)="nextMonth()">&gt;</button>
+  </div>
+  <div class="calendar-grid">
+    <div class="calendar-day" *ngFor="let day of ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb']">{{ day }}</div>
+    <div class="calendar-date"
+         *ngFor="let day of daysInMonth"
+         [class.other-month]="!day.isCurrentMonth"
+         [class.today]="day.isToday">
+      {{ day.date.date() }}
+      <div *ngIf="day.hasTarefa || day.hasEncomenda" class="highlight"></div>
+    </div>
+  </div>
+</div>

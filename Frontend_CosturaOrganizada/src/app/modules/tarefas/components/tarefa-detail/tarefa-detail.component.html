@@ -1,0 +1,10 @@
+<div class="tarefa-detail">
+    <h3>{{ tarefa.descricao }}</h3>
+    <p><strong>Prazo:</strong> {{ tarefa.prazo }}</p>
+    <p><strong>Concluída:</strong> {{ tarefa.concluida ? 'Sim' : 'Não' }}</p>
+    <div class="buttons">
+      <button class="edit-button" (click)="onEdit()">Editar</button>
+      <button class="delete-button" (click)="onDelete()">Deletar</button>
+    </div>
+  </div>
+  

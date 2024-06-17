@@ -1,0 +1,18 @@
+<form (ngSubmit)="onSave()">
+  <label>
+    Nome:
+    <input type="text" [(ngModel)]="cliente.nome" name="nome" required>
+  </label>
+  <label>
+    Contato:
+    <input type="text" [(ngModel)]="cliente.contato" name="contato" required>
+  </label>
+  <label>
+    Email:
+    <input type="email" [(ngModel)]="cliente.email" name="email" required>
+  </label>
+  <div class="form-buttons">
+    <button type="submit" class="save-button">Registrar</button>
+    <button type="button" class="cancel-button" (click)="onCancel()">Cancelar</button>
+  </div>
+</form>

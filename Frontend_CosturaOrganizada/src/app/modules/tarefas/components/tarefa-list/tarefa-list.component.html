@@ -1,0 +1,31 @@
+<div class="tarefa-list-container">
+    <div class="header">
+      <h2>Tarefas</h2>
+      <button class="add-button" (click)="onAddTarefa()">Adicionar Tarefa</button>
+    </div>
+    <div class="tarefa-list">
+      <div 
+        class="tarefa-item" 
+        *ngFor="let tarefa of tarefas" 
+        [class.concluida]="tarefa.concluida"
+        (click)="onViewTarefa(tarefa)">
+        {{ tarefa.descricao }}
+      </div>
+      <div *ngIf="tarefas.length === 0" class="no-tarefas">
+        Nenhuma tarefa cadastrada ainda.
+      </div>
+    </div>
+  
+    <app-modal [title]="modalTitle" [show]="showModal" (close)="onCloseModal()">
+      <ng-container *ngIf="!isEditing && modalTitle === 'Adicionar Tarefa'">
+        <app-tarefa-form [tarefa]="selectedTarefa" (save)="onSaveTarefa($event)" (cancel)="onCloseModal()"></app-tarefa-form>
+      </ng-container>
+      <ng-container *ngIf="isEditing && modalTitle === 'Editar Tarefa'">
+        <app-tarefa-form [tarefa]="selectedTarefa" (save)="onSaveTarefa($event)" (cancel)="onCloseModal()"></app-tarefa-form>
+      </ng-container>
+      <ng-container *ngIf="modalTitle === 'Detalhes da Tarefa'">
+        <app-tarefa-detail [tarefa]="selectedTarefa" (edit)="onEditTarefa($event)" (delete)="onDeleteTarefa($event)"></app-tarefa-detail>
+      </ng-container>
+    </app-modal>
+  </div>
+  

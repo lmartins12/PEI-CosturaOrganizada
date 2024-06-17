@@ -1,0 +1,278 @@
+{
+  "info": {
+    "name": "Costura Organizada API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Clientes",
+      "item": [
+        {
+          "name": "Get All Clientes",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/api/clientes",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "clientes"]
+            }
+          }
+        },
+        {
+          "name": "Get Cliente by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/api/clientes/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "clientes", "1"]
+            }
+          }
+        },
+        {
+          "name": "Create Cliente",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"nome\": \"Novo Cliente\",\n    \"contato\": \"1122334455\",\n    \"email\": \"novo_cliente@example.com\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/clientes",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "clientes"]
+            }
+          }
+        },
+        {
+          "name": "Update Cliente",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": 1,\n    \"nome\": \"Cliente Atualizado\",\n    \"contato\": \"1122334455\",\n    \"email\": \"cliente_atualizado@example.com\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/clientes/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "clientes", "1"]
+            }
+          }
+        },
+        {
+          "name": "Delete Cliente",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "http://localhost:8080/api/clientes/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "clientes", "1"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Encomendas",
+      "item": [
+        {
+          "name": "Get All Encomendas",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/api/encomendas",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "encomendas"]
+            }
+          }
+        },
+        {
+          "name": "Get Encomenda by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/api/encomendas/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "encomendas", "1"]
+            }
+          }
+        },
+        {
+          "name": "Create Encomenda",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"descricao\": \"Nova Encomenda\",\n    \"dataPedido\": \"2024-06-02\",\n    \"dataEntrega\": \"2024-06-12\",\n    \"cliente\": {\n        \"id\": 1\n    }\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/encomendas",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "encomendas"]
+            }
+          }
+        },
+        {
+          "name": "Update Encomenda",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": 1,\n    \"descricao\": \"Encomenda Atualizada\",\n    \"dataPedido\": \"2024-06-01\",\n    \"dataEntrega\": \"2024-06-10\",\n    \"cliente\": {\n        \"id\": 1\n    }\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/encomendas/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "encomendas", "1"]
+            }
+          }
+        },
+        {
+          "name": "Delete Encomenda",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "http://localhost:8080/api/encomendas/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "encomendas", "1"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Tarefas",
+      "item": [
+        {
+          "name": "Get All Tarefas",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/api/tarefas",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "tarefas"]
+            }
+          }
+        },
+        {
+          "name": "Get Tarefa by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/api/tarefas/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "tarefas", "1"]
+            }
+          }
+        },
+        {
+          "name": "Create Tarefa",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"descricao\": \"Nova Tarefa\",\n    \"prazo\": \"2024-06-08\",\n    \"concluida\": false\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/tarefas",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "tarefas"]
+            }
+          }
+        },
+        {
+          "name": "Update Tarefa",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": 1,\n    \"descricao\": \"Tarefa Atualizada\",\n    \"prazo\": \"2024-06-05\",\n    \"concluida\": true\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/tarefas/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "tarefas", "1"]
+            }
+          }
+        },
+        {
+          "name": "Delete Tarefa",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "http://localhost:8080/api/tarefas/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "tarefas", "1"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+<form (ngSubmit)="onSave()">
+    <label>
+      Descrição:
+      <input type="text" [(ngModel)]="tarefa.descricao" name="descricao" required>
+    </label>
+    <label>
+      Prazo:
+      <input type="date" [(ngModel)]="tarefa.prazo" name="prazo" required>
+    </label>
+    <label>
+      Concluída:
+      <input type="checkbox" [(ngModel)]="tarefa.concluida" name="concluida">
+    </label>
+    <div class="form-buttons">
+      <button type="submit" class="save-button">Registrar</button>
+      <button type="button" class="cancel-button" (click)="onCancel()">Cancelar</button>
+    </div>
+  </form>
+  

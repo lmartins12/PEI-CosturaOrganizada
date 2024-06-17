@@ -1,0 +1,9 @@
+<div class="cliente-detail">
+  <h3>{{ cliente.nome }}</h3>
+  <p><strong>Contato:</strong> {{ cliente.contato }}</p>
+  <p><strong>Email:</strong> {{ cliente.email }}</p>
+  <div class="buttons">
+    <button class="edit-button" (click)="onEdit()">Editar</button>
+    <button class="delete-button" (click)="onDelete()">Deletar</button>
+  </div>
+</div>

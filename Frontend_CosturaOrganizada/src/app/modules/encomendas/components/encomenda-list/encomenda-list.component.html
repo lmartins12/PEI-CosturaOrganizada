@@ -1,0 +1,27 @@
+<div class="encomenda-list-container">
+    <div class="header">
+      <h2>Encomendas</h2>
+      <button class="add-button" (click)="onAddEncomenda()">Adicionar Encomenda</button>
+    </div>
+    <div class="encomenda-list">
+      <div class="encomenda-item" *ngFor="let encomenda of encomendas" (click)="onViewEncomenda(encomenda)">
+        {{ encomenda.descricao }}
+      </div>
+      <div *ngIf="encomendas.length === 0" class="no-encomendas">
+        Nenhuma encomenda cadastrada ainda.
+      </div>
+    </div>
+  
+    <app-modal [title]="modalTitle" [show]="showModal" (close)="onCloseModal()">
+      <ng-container *ngIf="!isEditing && modalTitle === 'Adicionar Encomenda'">
+        <app-encomenda-form [encomenda]="selectedEncomenda" (save)="onSaveEncomenda($event)" (cancel)="onCloseModal()"></app-encomenda-form>
+      </ng-container>
+      <ng-container *ngIf="isEditing && modalTitle === 'Editar Encomenda'">
+        <app-encomenda-form [encomenda]="selectedEncomenda" (save)="onSaveEncomenda($event)" (cancel)="onCloseModal()"></app-encomenda-form>
+      </ng-container>
+      <ng-container *ngIf="modalTitle === 'Detalhes da Encomenda'">
+        <app-encomenda-detail [encomenda]="selectedEncomenda" (edit)="onEditEncomenda($event)" (delete)="onDeleteEncomenda($event)"></app-encomenda-detail>
+      </ng-container>
+    </app-modal>
+  </div>
+  

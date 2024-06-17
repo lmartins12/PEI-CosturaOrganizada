@@ -1,0 +1,7 @@
+export interface Cliente {
+    id: number;
+    nome: string;
+    contato: string;
+    email: string;
+  }
+  

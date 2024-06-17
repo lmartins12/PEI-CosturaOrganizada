@@ -1,0 +1,26 @@
+<div class="cliente-list-container">
+  <div class="header">
+    <h2>Clientes</h2>
+    <button class="add-button" (click)="onAddCliente()">Adicionar Cliente</button>
+  </div>
+  <div class="cliente-list">
+    <div class="cliente-item" *ngFor="let cliente of clientes" (click)="onViewCliente(cliente)">
+      {{ cliente.nome }}
+    </div>
+    <div *ngIf="clientes.length === 0" class="no-clientes">
+      Nenhum cliente cadastrado ainda.
+    </div>
+  </div>
+
+  <app-modal [title]="modalTitle" [show]="showModal" (close)="onCloseModal()">
+    <ng-container *ngIf="!isEditing && modalTitle === 'Adicionar Cliente'">
+      <app-cliente-form [cliente]="selectedCliente" (save)="onSaveCliente($event)" (cancel)="onCloseModal()"></app-cliente-form>
+    </ng-container>
+    <ng-container *ngIf="isEditing && modalTitle === 'Editar Cliente'">
+      <app-cliente-form [cliente]="selectedCliente" (save)="onSaveCliente($event)" (cancel)="onCloseModal()"></app-cliente-form>
+    </ng-container>
+    <ng-container *ngIf="modalTitle === 'Detalhes do Cliente'">
+      <app-cliente-detail [cliente]="selectedCliente" (edit)="onEditCliente($event)" (delete)="onDeleteCliente($event)"></app-cliente-detail>
+    </ng-container>
+  </app-modal>
+</div>

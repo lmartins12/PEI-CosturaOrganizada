@@ -1,0 +1,25 @@
+<form (ngSubmit)="onSave()">
+    <label>
+      Descrição:
+      <input type="text" [(ngModel)]="encomenda.descricao" name="descricao" required>
+    </label>
+    <label>
+      Data do Pedido:
+      <input type="date" [(ngModel)]="encomenda.dataPedido" name="dataPedido" required>
+    </label>
+    <label>
+      Data de Entrega:
+      <input type="date" [(ngModel)]="encomenda.dataEntrega" name="dataEntrega" required>
+    </label>
+    <label>
+      Cliente:
+      <select [(ngModel)]="encomenda.cliente" name="cliente" required>
+        <option *ngFor="let cliente of clientes" [ngValue]="cliente">{{ cliente.nome }}</option>
+      </select>
+    </label>
+    <div class="form-buttons">
+      <button type="submit" class="save-button">Registrar</button>
+      <button type="button" class="cancel-button" (click)="onCancel()">Cancelar</button>
+    </div>
+  </form>
+  
