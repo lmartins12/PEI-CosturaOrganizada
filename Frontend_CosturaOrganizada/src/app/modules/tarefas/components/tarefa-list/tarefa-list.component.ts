@@ -41,7 +41,7 @@ export class TarefaListComponent implements OnInit {
 
   onEditTarefa(tarefa: Tarefa) {
     this.selectedTarefa = { ...tarefa };
-    this.modalTitle = 'Editar Tarefa ';
+    this.modalTitle = 'Editar Tarefa';
     this.isEditing = true;
     this.showModal = true;
   }
